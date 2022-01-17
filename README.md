@@ -1,11 +1,26 @@
-# buildspace x thirdweb - Build your own DAO with just Javascript
+# claim-nft-react
 
-### **Welcome 👋**
-To get started with this course, clone this repo and follow these commands:
+## Usage
 
-1. Run `npm install` at the root of your directory
-2. Run `npm start` to start the project
-3. Start coding!
+```
+# clone repository
+git clone git@github.com:suud/claim-nft-react.git
+cd claim-nft-react
 
-### **Questions?**
-Have some questions make sure you head over to your [buildspace Dashboard](https://app.buildspace.so/projects/COb520aae3-7925-42f4-a5e7-eaf718933766) and link your Discord account so you can get access to helpful channels and your instructor!
+# update config
+cp src/config.json.example src/config.json
+vim src/config.json
+
+# install dependencies
+npm install
+
+# run development build
+npm start
+
+# create production build
+npm build
+```
+
+## Resources
+
+- [buildspace: Build your own DAO](https://buildspace.so/daos)
