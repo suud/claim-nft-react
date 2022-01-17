@@ -78,7 +78,7 @@ const App = () => {
         <h2>Please connect to Rinkeby</h2>
         <p>This dapp only works on the Rinkeby network.</p>
         <button onClick={() => switchNetwork(config.networkId)} className="btn-hero">
-          Switch to Rinkeby
+          Switch Network
         </button>
       </div>
     );
