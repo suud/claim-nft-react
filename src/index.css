@@ -1,7 +1,7 @@
 html,
 body {
   margin: 0;
-  font-family: Inter, sans-serif;
+  font-family: Archivo, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #2a9d8f;
@@ -20,6 +20,14 @@ h1 {
   h1 {
     font-size: 3rem;
   }
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+p {
+  font-size: 1.2rem;
 }
 
 .unsupported-network {
