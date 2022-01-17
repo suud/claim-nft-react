@@ -1,4 +1,5 @@
 {
-    "network": "rinkeby",
+    "provider": "rinkeby",
+    "networkId": 4,
     "bundleDropModuleAddress": "0xffffffffffffffffffffffffffffffffffffffff"
 }

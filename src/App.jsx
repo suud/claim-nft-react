@@ -1,16 +1,14 @@
 import * as config from "./config.json";
-
 import { useEffect, useState } from "react";
-
-import { useWeb3 } from "@3rdweb/hooks";
+import { useWeb3, useSwitchNetwork } from "@3rdweb/hooks";
 import { ThirdwebSDK } from "@3rdweb/sdk";
 
-const sdk = new ThirdwebSDK(config.network);
-
+const sdk = new ThirdwebSDK(config.provider);
 const bundleDropModule = sdk.getBundleDropModule(config.bundleDropModuleAddress);
 
 const App = () => {
   const { connectWallet, address, error, provider } = useWeb3();
+  const { switchNetwork } = useSwitchNetwork();
   console.log("👋 Address:", address);
 
   // The signer is required to sign transactions on the blockchain
@@ -78,10 +76,10 @@ const App = () => {
     return (
       <div className="unsupported-network">
         <h2>Please connect to Rinkeby</h2>
-        <p>
-          This dapp only works on the Rinkeby network, please switch networks
-          in your connected wallet.
-        </p>
+        <p>This dapp only works on the Rinkeby network.</p>
+        <button onClick={() => switchNetwork(config.networkId)} className="btn-hero">
+          Switch to Rinkeby
+        </button>
       </div>
     );
   }
