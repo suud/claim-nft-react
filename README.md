@@ -18,7 +18,7 @@ npm install
 npm start
 
 # create production build
-npm build
+npm run build
 ```
 
 ## Resources
