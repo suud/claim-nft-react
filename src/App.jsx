@@ -1,13 +1,13 @@
+import * as config from "./config.json";
+
 import { useEffect, useState } from "react";
 
 import { useWeb3 } from "@3rdweb/hooks";
 import { ThirdwebSDK } from "@3rdweb/sdk";
 
-const sdk = new ThirdwebSDK("rinkeby");
+const sdk = new ThirdwebSDK(config.network);
 
-const bundleDropModule = sdk.getBundleDropModule(
-  "<DROP_MODULE_ADDRESS>",
-);
+const bundleDropModule = sdk.getBundleDropModule(config.bundleDropModuleAddress);
 
 const App = () => {
   const { connectWallet, address, error, provider } = useWeb3();
