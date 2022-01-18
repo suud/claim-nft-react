@@ -7,7 +7,7 @@ const sdk = new ThirdwebSDK(config.provider);
 const bundleDropModule = sdk.getBundleDropModule(config.bundleDropModuleAddress);
 
 const App = () => {
-  const { connectWallet, address, error, provider } = useWeb3();
+  const { connectWallet, address, error, provider, chainId } = useWeb3();
   const { switchNetwork } = useSwitchNetwork();
   console.log("👋 Address:", address);
 
@@ -21,6 +21,20 @@ const App = () => {
     sdk.setProviderOrSigner(signer);
   }, [signer]);
 
+  const [usesSupportedChain, setUsesSupportedChain] = useState(true);
+
+  // Check if user is on supported chain
+  useEffect(() => {
+    if (error && error.name === "UnsupportedChainIdError") {
+      setUsesSupportedChain(false);
+      return;
+    }
+    if (chainId && chainId !== config.chainId) {
+      setUsesSupportedChain(false);
+      return;
+    }
+    setUsesSupportedChain(true);
+  }, [chainId, error]);
 
   const [hasClaimedNFT, setHasClaimedNFT] = useState(false);
   // isClaiming lets us easily keep a loading state while the NFT is minting
@@ -36,10 +50,10 @@ const App = () => {
       .then((balance) => {
         if (balance.gt(0)) {
           setHasClaimedNFT(true);
-          console.log("🌟 this user has a citizenship NFT!");
+          console.log("🌟 This user has a citizenship NFT!");
         } else {
           setHasClaimedNFT(false);
-          console.log("😭 this user doesn't have a citizenship NFT.");
+          console.log("😭 This user doesn't have a citizenship NFT.");
         }
       })
       .catch((error) => {
@@ -70,14 +84,13 @@ const App = () => {
       });
   }, [hasClaimedNFT]);
 
-
   // If a unsupported chain is selected, the user will see this
-  if (error && error.name === "UnsupportedChainIdError") {
+  if (!usesSupportedChain) {
     return (
       <div className="unsupported-network">
         <h2>Please connect to Rinkeby</h2>
         <p>This dapp only works on the Rinkeby network.</p>
-        <button onClick={() => switchNetwork(config.networkId)} className="btn-hero">
+        <button onClick={() => switchNetwork(config.chainId)} className="btn-hero">
           Switch Network
         </button>
       </div>
