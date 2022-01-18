@@ -16,7 +16,7 @@ if (!process.env.THIRDWEB_PROJECT_ADDRESS || process.env.THIRDWEB_PROJECT_ADDRES
 if (!process.env.RPC_URL || process.env.RPC_URL === "") {
     console.log("🛑 Public Ethereum endpoint (RPC URL) environment variable not set or empty.");
 }
-if (!process.env.BUNDLE_DROP_NAME || process.env.BUNDLE_DROP_NAME == "") {
+if (!process.env.BUNDLE_DROP_NAME || process.env.BUNDLE_DROP_NAME === "") {
     console.log("🛑 Bundle Drop Name environment variable not set or empty.");
 }
 if (!process.env.BUNDLE_DROP_DESCRIPTION) {
