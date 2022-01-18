@@ -51,8 +51,9 @@ const sdk = new ThirdwebSDK(
 (async () => {
     // Get thirdweb app
     // This will select the first of your thirdweb projects
+    let app;
     try {
-        const app = sdk.getAppModule(process.env.THIRDWEB_PROJECT_ADDRESS);
+        app = sdk.getAppModule(process.env.THIRDWEB_PROJECT_ADDRESS);
         console.log("✅ Successfully selected thirdweb project!");
         console.log("Address:", app.address);
     } catch (error) {
@@ -65,8 +66,9 @@ const sdk = new ThirdwebSDK(
     // Deploy Bundle Drop Module
     // This will deploy a smart contract that we'll use to define
     // certain rules (e.g. claim conditions) for our NFT.
+    let bundleDropModule;
     try {
-        const bundleDropModule = await app.deployBundleDropModule({
+        bundleDropModule = await app.deployBundleDropModule({
             name: process.env.BUNDLE_DROP_NAME,
             description: process.env.BUNDLE_DROP_DESCRIPTION,
             image: readFileSync(process.env.BUNDLE_DROP_IMG_PATH),
