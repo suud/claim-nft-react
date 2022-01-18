@@ -88,7 +88,7 @@ const App = () => {
   if (!address) {
     return (
       <div className="landing">
-        <h1>Welcome to Bike Land</h1>
+        <h1>Become a Bike Land Citizen</h1>
         <button onClick={() => connectWallet("injected")} className="btn-hero">
           Connect your wallet
         </button>
@@ -110,7 +110,7 @@ const App = () => {
   // Users without the NFT will see this
   return (
     <div className="mint-nft">
-      <h1>Mint your Bike Land citizenship NFT</h1>
+      <h1>Mint your Bike Land Citizenship NFT</h1>
       <button
         disabled={isClaiming}
         onClick={() => {
@@ -134,7 +134,7 @@ const App = () => {
             });
         }}
       >
-        {isClaiming ? "Minting..." : "Mint NFT (FREE)"}
+        {isClaiming ? "Minting..." : "Mint NFT"}
       </button>
     </div>
   );
