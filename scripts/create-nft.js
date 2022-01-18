@@ -89,7 +89,7 @@ const sdk = new ThirdwebSDK(
 
     // Create NFT
     try {
-        await bundleDrop.createBatch([
+        await bundleDropModule.createBatch([
             {
                 name: process.env.NFT_NAME,
                 description: process.env.NFT_DESCRIPTION,
@@ -104,7 +104,7 @@ const sdk = new ThirdwebSDK(
 
     // Set NFT claim conditions
     try {
-        const claimConditionFactory = bundleDrop.getClaimConditionFactory();
+        const claimConditionFactory = bundleDropModule.getClaimConditionFactory();
         claimConditionFactory.newClaimPhase({
             // When can users start claiming the NFT
             // This could be set to a date in the future
@@ -115,7 +115,7 @@ const sdk = new ThirdwebSDK(
             maxQuantityPerTransaction: 1,
         });
 
-        await bundleDrop.setClaimCondition(0, claimConditionFactory);
+        await bundleDropModule.setClaimCondition(0, claimConditionFactory);
         console.log("✅ Sucessfully set NFT claim conditions!");
     } catch (error) {
         console.error("🛑 Failed to set NFT claim conditions", error);
