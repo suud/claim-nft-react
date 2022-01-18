@@ -26,3 +26,4 @@ npm run build
 
 - [thirdweb: Create a project](https://thirdweb.com/portal/learn/projects)
 - [buildspace: Build your own DAO](https://buildspace.so/daos)
+- [buildspace: Build your own DAO - finished project code](https://github.com/buildspace/buildspace-dao-final)
