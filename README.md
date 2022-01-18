@@ -1,5 +1,5 @@
 # claim-nft-react
-Create your own NFT and a website where everyone can mint it for free.
+Create your own NFT and a website where everyone can mint one for free.
 
 ## Prerequisites
 - [thirdweb project](https://thirdweb.com/portal/learn/projects)
