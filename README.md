@@ -1,4 +1,5 @@
 # claim-nft-react
+Create your own NFT and a website where everyone can mint it for free.
 
 ## Usage
 
