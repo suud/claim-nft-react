@@ -89,7 +89,7 @@ const App = () => {
     return (
       <div className="unsupported-network">
         <h2>Please connect to Rinkeby</h2>
-        <p>This dapp only works on the Rinkeby network.</p>
+        <p>This dApp only works on the Rinkeby network.</p>
         <button onClick={() => switchNetwork(config.chainId)} className="btn-hero">
           Switch Network
         </button>
@@ -114,8 +114,11 @@ const App = () => {
     return (
       <div className="citizen-page">
         <h1>Bike Land</h1>
-        <p>Congratulations! You are one out of {citizenAddresses.length} Bike Land citizens.</p>
-        <p>Go ahead and use our exclusive services. Or just ride your bike!</p>
+        <p>
+          Congratulations! You are one out of {citizenAddresses.length} Bike Land citizens.
+          <br />
+          Go ahead and use our exclusive services. Or seize the day and ride your bike!
+        </p>
       </div>
     );
   };
