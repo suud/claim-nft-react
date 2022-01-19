@@ -100,7 +100,7 @@ const App = () => {
   // When no wallet is connected, the user will see this
   if (!address) {
     return (
-      <div className="landing">
+      <div className="connect-wallet">
         <h1>Become a Bike Land Citizen</h1>
         <button onClick={() => connectWallet("injected")} className="btn-hero">
           Connect your wallet
