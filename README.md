@@ -1,6 +1,8 @@
 # claim-nft-react
 Create your own NFT and a website where everyone can mint one for free.
 
+Learn more about the motivation behind this repository by reading [this article](https://blog.suud.org/aws-cognito-nft-auth).
+
 ## Prerequisites
 - [thirdweb project](https://thirdweb.com/portal/learn/projects)
 
